@@ -5,9 +5,9 @@
 </div>
 
 <ul>
-    <li routerLink="/">Home</li>
-    <li [routerLink]="['/page1']">Page1</li>
-    <li><a [routerLink]="['/', 'page2']">Page2</a></li>
+    <li routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">Home</li>
+    <li [routerLink]="['/page1']" routerLinkActive="active">Page1</li>
+    <li><a [routerLink]="['/', 'page2']" routerLinkActive="active">Page2</a></li>
 </ul>
 
 <router-outlet></router-outlet>
