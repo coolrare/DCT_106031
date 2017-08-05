@@ -9,6 +9,7 @@
         "assets": [
             "dashboard.html",
             "cards.html",
+            "login.html",
             "assets",
             "favicon.ico"
         ],
