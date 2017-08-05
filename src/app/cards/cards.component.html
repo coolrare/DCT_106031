@@ -17,7 +17,7 @@
                                 </div>
                                 <!-- END dropdown-->
                                 <div class="card-title">
-                                    {{ type }}
+                                    {{ type }} :: {{ action }} :: {{ action1 }}
                                 </div>
                             </div>
                             <div class="card-body">
@@ -30,8 +30,14 @@
                                 </p>
                             </div>
                             <div class="card-footer">
-                                <button type="button" class="btn btn-flat btn-default">Action 1</button>
-                                <button type="button" class="btn btn-flat btn-default">Action 2</button>
+                                <button type="button" class="btn btn-flat btn-default" [routerLink]="['/cards/200', {
+                                    action: -1
+                                  }]">
+                                  action -1
+                                </button>
+                                <button type="button" class="btn btn-flat btn-default" routerLink="/cards/201" [queryParams]="{ action1: 1 }">
+                                  action +1
+                                </button>
                             </div>
                         </div>
                     </div>
