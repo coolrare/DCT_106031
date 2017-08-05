@@ -3,11 +3,13 @@ import { Routes, RouterModule } from '@angular/router';
 import { Page1Component } from './page1/page1.component';
 import { Page2Component } from './page2/page2.component';
 import { fallbackRoute } from './shared/fallback-route';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { CardsComponent } from './cards/cards.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: 'page1', pathMatch: 'full' },
-  { path: 'page1', component: Page1Component, data: { title: 'My Page1'} },
-  { path: 'page2', component: Page2Component },
+  { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
+  { path: 'dashboard', component: DashboardComponent },
+  { path: 'cards', component: CardsComponent },
   fallbackRoute
 ];
 
