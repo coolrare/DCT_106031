@@ -7,6 +7,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { CardsComponent } from './cards/cards.component';
 import { LoginComponent } from './login/login.component';
 import { LayoutComponent } from './layout/layout.component';
+import { LoginGuard } from './login.guard';
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
@@ -14,7 +15,10 @@ const routes: Routes = [
     children: [
       { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
       { path: 'dashboard', component: DashboardComponent },
-      { path: 'cards/:type', component: CardsComponent },
+      { path: 'cards/:type',
+        component: CardsComponent,
+        canActivate: [LoginGuard]
+      },
       { path: 'charts',
         loadChildren: './charts/charts.module#ChartsModule'
       }
