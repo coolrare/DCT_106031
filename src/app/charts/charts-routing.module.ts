@@ -3,10 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { FlotComponent } from './flot/flot.component';
 
 const routes: Routes = [
-  { path: 'charts',
-    children: [
-      { path: 'flot', component: FlotComponent }
-    ] }
+  { path: 'flot', component: FlotComponent }
 ];
 
 @NgModule({

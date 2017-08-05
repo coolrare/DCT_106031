@@ -16,8 +16,7 @@ import { ChartsModule } from './charts/charts.module';
     Page1Component,
     Page2Component,
     DashboardComponent,
-    CardsComponent,
-    FlotComponent
+    CardsComponent
   ],
   imports: [
     BrowserModule,
