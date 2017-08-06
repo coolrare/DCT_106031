@@ -18,8 +18,7 @@ const routes: Routes = [
       { path: '', redirectTo: 'forms/classic2', pathMatch: 'full' },
       { path: 'dashboard', component: DashboardComponent },
       { path: 'cards/:type',
-        component: CardsComponent,
-        canActivate: [LoginGuard]
+        component: CardsComponent
       },
       { path: 'charts',
         loadChildren: './charts/charts.module#ChartsModule'
