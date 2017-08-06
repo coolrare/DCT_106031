@@ -14,10 +14,14 @@ export class Classic2Component implements OnInit {
   ngOnInit() {
     this.form = this.fb.group({
       title: ['Hello', [
-        Validators.required,
-        Validators.minLength(3)
-      ]],
-      subtitle: 'World'
+          Validators.required,
+          Validators.minLength(3)
+        ]
+      ],
+      subtitle: ['World', [
+          Validators.required
+        ]
+      ]
     })
   }
 
