@@ -7,8 +7,10 @@ import {Component, ElementRef, OnInit, ViewChild} from '@angular/core';
 })
 export class BlockComponent implements OnInit {
 
-  @ViewChild('title')
-  title: ElementRef;
+  @ViewChild('titleElement')
+  titleElement: ElementRef;
+
+  title = 'Sky red';
 
   constructor() { }
 
@@ -17,7 +19,7 @@ export class BlockComponent implements OnInit {
   }
 
   ngAfterViewInit() {
-    console.log(this.title.nativeElement.innerHTML);
+    console.log(this.titleElement.nativeElement.innerHTML);
   }
 
 }
