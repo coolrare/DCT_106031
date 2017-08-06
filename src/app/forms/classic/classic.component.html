@@ -1,23 +1,27 @@
 <section>
     <div class="container-fluid">
         <h5 class="mt0">Classic form controls and custom variants</h5>
-        <p class="mb-lg">Standard Bootstrap form and input controls with customized UI variations</p>
+        <div class="mb-lg">
+            <pre>f.value = {{ f.value | json }}</pre>
+            <pre>data = {{ data | json }}</pre>
+        </div>
         <div class="card">
             <div class="card-body">
-                <form method="get" action="/" class="form-horizontal">
+                <form #f="ngForm" class="form-horizontal">
                     <fieldset>
                         <div class="form-group">
-                            <label class="col-sm-2 control-label">Rounded Corners</label>
+                            <label class="col-sm-2 control-label">標題</label>
                             <div class="col-sm-10">
-                                <input type="text" class="form-control rounded">
+                                <input type="text" class="form-control rounded" name="title" [(ngModel)]="data.title">
                             </div>
                         </div>
                     </fieldset>
                     <fieldset>
                         <div class="form-group">
-                            <label class="col-sm-2 control-label">With help</label>
+                            <label class="col-sm-2 control-label">副標</label>
                             <div class="col-sm-10">
-                                <input type="text" class="form-control"><span class="help-block">A block of help text that breaks onto a new line and may extend beyond one line.</span>
+                                <input type="text" class="form-control" name="subtitle" [(ngModel)]="data.subtitle">
+                                <span class="help-block">A block of help text that breaks onto a new line and may extend beyond one line.</span>
                             </div>
                         </div>
                     </fieldset>
