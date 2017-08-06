@@ -21,4 +21,9 @@ export class ClassicComponent implements OnInit {
     //console.log(ctl);
     ctl.control.disable();
   }
+
+  doSubmit($event, f) {
+    console.log($event);
+    console.log(f);
+  }
 }
