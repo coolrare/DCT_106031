@@ -55,7 +55,7 @@
                         </div>
                     </fieldset>
 
-                    <fieldset *ngFor="let i of addresses">
+                    <fieldset *ngFor="let addr of this.data_address_len; let i=index">
                         <div class="form-group">
                             <label for="input-id-1" class="col-sm-2 control-label">
                               地址 {{i+1}}
