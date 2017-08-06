@@ -9,10 +9,19 @@
             <div class="card-body">
                 <form #f="ngForm" class="form-horizontal">
                     <fieldset>
-                        <div class="form-group">
+                        <div class="form-group" [class.has-error]="mTitle.errors">
                             <label class="col-sm-2 control-label">標題</label>
                             <div class="col-sm-10">
-                                <input type="text" class="form-control rounded" name="title" [(ngModel)]="data.title">
+                                <input type="text" class="form-control rounded" name="title" [(ngModel)]="data.title" required #mTitle="ngModel">
+                                <span class="help-block">
+                                  <span *ngIf="mTitle.errors?.required">請填寫標題內容</span>
+                                <pre>value     = {{ mTitle.value | json }}</pre>
+                                <pre>touched   = {{ mTitle.touched | json }}</pre>
+                                <pre>untouched = {{ mTitle.untouched | json }}</pre>
+                                <pre>pristine  = {{ mTitle.pristine | json }}</pre>
+                                <pre>dirty     = {{ mTitle.dirty | json }}</pre>
+                                <pre>errors    = {{ mTitle.errors | json }}</pre>
+                                </span>
                             </div>
                         </div>
                     </fieldset>
@@ -20,8 +29,15 @@
                         <div class="form-group">
                             <label class="col-sm-2 control-label">副標</label>
                             <div class="col-sm-10">
-                                <input type="text" class="form-control" name="subtitle" [(ngModel)]="data.subtitle">
-                                <span class="help-block">A block of help text that breaks onto a new line and may extend beyond one line.</span>
+                                <input type="text" class="form-control" name="subtitle" [(ngModel)]="data.subtitle" required #mSubtitle="ngModel">
+                                <span class="help-block">
+                                  <pre>value     = {{ mSubtitle.value | json }}</pre>
+                                  <pre>touched   = {{ mSubtitle.touched | json }}</pre>
+                                  <pre>untouched = {{ mSubtitle.untouched | json }}</pre>
+                                  <pre>pristine  = {{ mSubtitle.pristine | json }}</pre>
+                                  <pre>dirty     = {{ mSubtitle.dirty | json }}</pre>
+                                  <pre>errors    = {{ mSubtitle.errors | json }}</pre>
+                                </span>
                             </div>
                         </div>
                     </fieldset>
