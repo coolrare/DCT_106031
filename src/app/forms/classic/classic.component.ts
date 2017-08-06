@@ -9,8 +9,11 @@ import {FormControl, NgModel} from '@angular/forms';
 export class ClassicComponent implements OnInit {
   data: any = {
     'title': 'Hello',
-    'subtitle': 'World'
+    'subtitle': 'World',
+    'address': []
   };
+
+  addresses = [0,1,2];
 
   constructor() { }
 
@@ -25,5 +28,10 @@ export class ClassicComponent implements OnInit {
   doSubmit($event, f) {
     console.log($event);
     console.log(f);
+  }
+
+  AddAddress() {
+    var len = this.addresses.length;
+    this.addresses.push(len);
   }
 }
