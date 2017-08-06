@@ -2,8 +2,17 @@
     <div class="container-fluid">
         <h5 class="mt0">Classic form controls and custom variants</h5>
         <div class="mb-lg">
-            <pre>f.value = {{ f.value | json }}</pre>
             <pre>data = {{ data | json }}</pre>
+            <pre>f.value     = {{ f.value | json }}</pre>
+            <pre>f.touched   = {{ f.touched | json }}</pre>
+            <pre>f.untouched = {{ f.untouched | json }}</pre>
+            <pre>f.pristine  = {{ f.pristine | json }}</pre>
+            <pre>f.dirty     = {{ f.dirty | json }}</pre>
+            <pre>f.valid     = {{ f.valid | json }}</pre>
+            <pre>f.invalid   = {{ f.invalid | json }}</pre>
+            <pre>f.errors    = {{ f.errors | json }}</pre>
+            <pre>f.enabled   = {{ f.enabled | json }}</pre>
+            <pre>f.disabled   = {{ f.disabled | json }}</pre>
         </div>
         <div class="card">
             <div class="card-body">
@@ -12,7 +21,7 @@
                         <div class="form-group" [class.has-error]="mTitle.touched && mTitle.invalid">
                             <label class="col-sm-2 control-label">標題</label>
                             <div class="col-sm-10">
-                                <input type="text" class="form-control rounded" name="title" [(ngModel)]="data.title" required #mTitle="ngModel">
+                                <input (click)="setDisabled(mTitle)" type="text" class="form-control rounded" name="title" [(ngModel)]="data.title" required #mTitle="ngModel">
                                 <span class="help-block">
                                   <span *ngIf="mTitle.errors?.required">請填寫標題內容</span>
                                 <pre>value     = {{ mTitle.value | json }}</pre>
@@ -31,7 +40,7 @@
                         <div class="form-group" [class.has-error]="mSubtitle.touched && mTitle.invalid">
                             <label class="col-sm-2 control-label">副標</label>
                             <div class="col-sm-10">
-                                <input type="text" class="form-control" name="subtitle" [(ngModel)]="data.subtitle" required minlength="3" maxlength="100" pattern="\d+" #mSubtitle="ngModel">
+                                <input (click)="setDisabled(mSubtitle)" type="text" class="form-control" name="subtitle" [(ngModel)]="data.subtitle" required minlength="3" maxlength="100" #mSubtitle="ngModel">
                                 <span class="help-block">
                                   <pre>value     = {{ mSubtitle.value | json }}</pre>
                                   <pre>touched   = {{ mSubtitle.touched | json }}</pre>
