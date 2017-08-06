@@ -36,8 +36,4 @@ export class CardsComponent implements OnInit {
     // this.block.title = '123';
   }
 
-  addCounter() {
-    this.counter++;
-  }
-
 }
