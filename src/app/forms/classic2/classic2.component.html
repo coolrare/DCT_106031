@@ -55,6 +55,25 @@
                             </div>
                         </div>
                     </fieldset>
+
+
+                    <fieldset formArrayName="addresses" *ngFor="let ctrl of form.get('addresses').controls; let i=index">
+                        <div class="form-group">
+                            <label for="input-id-1" class="col-sm-2 control-label">
+                              地址 {{i+1}}
+                            </label>
+                            <div class="col-sm-10">
+                                <input id="input-id-1" type="text" class="form-control" [formControlName]="i">
+                            </div>
+                        </div>
+                    </fieldset>
+
+                    <input type="button" value="新增地址" (click)="AddAddress()">
+
+                    <input type="submit" value="送出">
+
+
+
                     <fieldset>
                         <div class="form-group">
                             <label for="input-id-1" class="col-sm-2 control-label">Label focus</label>

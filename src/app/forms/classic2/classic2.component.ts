@@ -23,7 +23,11 @@ export class Classic2Component implements OnInit {
             Validators.required
           ]
         ]
-      })
+      }),
+      addresses: this.fb.array([
+        this.fb.control('Taipei'),
+        this.fb.control('Kaoshuang')
+      ])
     })
   }
 
@@ -31,4 +35,7 @@ export class Classic2Component implements OnInit {
     console.log(this.form);
   }
 
+  AddAddress() {
+
+  }
 }
