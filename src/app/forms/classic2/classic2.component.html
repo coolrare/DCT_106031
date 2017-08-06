@@ -37,20 +37,20 @@
                             </div>
                         </div>
                     </fieldset>
-                    <fieldset>
-                        <div class="form-group" [class.has-error]="form.get('subtitle').touched && form.get('subtitle').invalid">
+                    <fieldset formGroupName="group1">
+                        <div class="form-group" [class.has-error]="form.get('group1.subtitle').touched && form.get('group1.subtitle').invalid">
                             <label class="col-sm-2 control-label">副標</label>
                             <div class="col-sm-10">
                                 <input type="text" class="form-control" formControlName="subtitle">
                                 <span class="help-block">
-                                  <pre>value     = {{ form.get('subtitle').value | json }}</pre>
-                                  <pre>touched   = {{ form.get('subtitle').touched | json }}</pre>
-                                  <pre>untouched = {{ form.get('subtitle').untouched | json }}</pre>
-                                  <pre>pristine  = {{ form.get('subtitle').pristine | json }}</pre>
-                                  <pre>dirty     = {{ form.get('subtitle').dirty | json }}</pre>
-                                  <pre>valid     = {{ form.get('subtitle').valid | json }}</pre>
-                                  <pre>invalid   = {{ form.get('subtitle').invalid | json }}</pre>
-                                  <pre>errors    = {{ form.get('subtitle').errors | json }}</pre>
+                                  <pre>value     = {{ form.controls.group1.controls.subtitle.value | json }}</pre>
+                                  <pre>touched   = {{ form.get('group1.subtitle').touched | json }}</pre>
+                                  <pre>untouched = {{ form.get('group1.subtitle').untouched | json }}</pre>
+                                  <pre>pristine  = {{ form.get('group1.subtitle').pristine | json }}</pre>
+                                  <pre>dirty     = {{ form.get('group1.subtitle').dirty | json }}</pre>
+                                  <pre>valid     = {{ form.get('group1.subtitle').valid | json }}</pre>
+                                  <pre>invalid   = {{ form.get('group1.subtitle').invalid | json }}</pre>
+                                  <pre>errors    = {{ form.get('group1.subtitle').errors | json }}</pre>
                                 </span>
                             </div>
                         </div>

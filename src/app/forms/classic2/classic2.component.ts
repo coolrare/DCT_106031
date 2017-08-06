@@ -18,10 +18,12 @@ export class Classic2Component implements OnInit {
           Validators.minLength(3)
         ]
       ],
-      subtitle: ['World', [
-          Validators.required
+      group1: this.fb.group({
+        subtitle: ['World', [
+            Validators.required
+          ]
         ]
-      ]
+      })
     })
   }
 
