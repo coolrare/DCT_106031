@@ -9,7 +9,7 @@
             <div class="card-body">
                 <form #f="ngForm" class="form-horizontal">
                     <fieldset>
-                        <div class="form-group" [class.has-error]="mTitle.errors">
+                        <div class="form-group" [class.has-error]="mTitle.touched && mTitle.invalid">
                             <label class="col-sm-2 control-label">標題</label>
                             <div class="col-sm-10">
                                 <input type="text" class="form-control rounded" name="title" [(ngModel)]="data.title" required #mTitle="ngModel">
@@ -20,22 +20,26 @@
                                 <pre>untouched = {{ mTitle.untouched | json }}</pre>
                                 <pre>pristine  = {{ mTitle.pristine | json }}</pre>
                                 <pre>dirty     = {{ mTitle.dirty | json }}</pre>
+                                <pre>valid     = {{ mTitle.valid | json }}</pre>
+                                <pre>invalid   = {{ mTitle.invalid | json }}</pre>
                                 <pre>errors    = {{ mTitle.errors | json }}</pre>
                                 </span>
                             </div>
                         </div>
                     </fieldset>
                     <fieldset>
-                        <div class="form-group">
+                        <div class="form-group" [class.has-error]="mSubtitle.touched && mTitle.invalid">
                             <label class="col-sm-2 control-label">副標</label>
                             <div class="col-sm-10">
-                                <input type="text" class="form-control" name="subtitle" [(ngModel)]="data.subtitle" required #mSubtitle="ngModel">
+                                <input type="text" class="form-control" name="subtitle" [(ngModel)]="data.subtitle" required minlength="3" maxlength="100" pattern="\d+" #mSubtitle="ngModel">
                                 <span class="help-block">
                                   <pre>value     = {{ mSubtitle.value | json }}</pre>
                                   <pre>touched   = {{ mSubtitle.touched | json }}</pre>
                                   <pre>untouched = {{ mSubtitle.untouched | json }}</pre>
                                   <pre>pristine  = {{ mSubtitle.pristine | json }}</pre>
                                   <pre>dirty     = {{ mSubtitle.dirty | json }}</pre>
+                                  <pre>valid     = {{ mTitle.valid | json }}</pre>
+                                  <pre>invalid   = {{ mTitle.invalid | json }}</pre>
                                   <pre>errors    = {{ mSubtitle.errors | json }}</pre>
                                 </span>
                             </div>
