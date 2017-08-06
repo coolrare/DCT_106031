@@ -1,5 +1,14 @@
 import {Component, OnInit} from '@angular/core';
-import {FormArray, FormBuilder, FormGroup, Validators} from '@angular/forms';
+import {AbstractControl, FormArray, FormBuilder, FormGroup, Validators} from '@angular/forms';
+
+function mustInKaoshuang(ctrl: AbstractControl) {
+  if(ctrl.value.indexOf('高雄') >= 0) {
+    return null;
+  } else {
+    return { 'must-in-kaoshuang': '地址必須有「高雄」字樣' };
+  }
+}
+
 
 @Component({
   selector: 'app-classic2',
@@ -38,7 +47,8 @@ export class Classic2Component implements OnInit {
   AddAddress() {
     let addresses = (this.form.get('addresses') as FormArray);
     addresses.push(this.fb.control('New Address', [
-      Validators.required
+      Validators.required,
+      mustInKaoshuang
     ]));
   }
 }
