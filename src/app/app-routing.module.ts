@@ -9,12 +9,13 @@ import { LoginComponent } from './login/login.component';
 import { LayoutComponent } from './layout/layout.component';
 import { LoginGuard } from './login.guard';
 import { ClassicComponent } from './forms/classic/classic.component';
+import { Classic2Component } from './forms/classic2/classic2.component';
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: '', component: LayoutComponent,
     children: [
-      { path: '', redirectTo: 'forms/classic', pathMatch: 'full' },
+      { path: '', redirectTo: 'forms/classic2', pathMatch: 'full' },
       { path: 'dashboard', component: DashboardComponent },
       { path: 'cards/:type',
         component: CardsComponent,
@@ -23,7 +24,8 @@ const routes: Routes = [
       { path: 'charts',
         loadChildren: './charts/charts.module#ChartsModule'
       },
-      { path: 'forms/classic', component: ClassicComponent }
+      { path: 'forms/classic', component: ClassicComponent },
+      { path: 'forms/classic2', component: Classic2Component }
   ]},
   fallbackRoute
 ];
