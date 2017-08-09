@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {FormControl, NgModel} from '@angular/forms';
+// import 'rxjs';
 
 @Component({
   selector: 'app-classic',

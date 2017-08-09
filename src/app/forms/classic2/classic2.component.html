@@ -17,22 +17,22 @@
             <div class="card-body">
                 <form [formGroup]="form" (ngSubmit)="doSubmit()" class="form-horizontal">
                     <fieldset>
-                        <div class="form-group" [class.has-error]="form.controls.title.touched && form.controls.title.invalid">
+                        <div class="form-group" [class.has-error]="form.get('title').touched && form.get('title').invalid">
                             <label class="col-sm-2 control-label">
                               標題
                             </label>
                             <div class="col-sm-10">
                                 <input type="text" class="form-control rounded" formControlName="title">
                                 <span class="help-block">
-                                  <span *ngIf="form.controls.title.errors?.required">請填寫標題內容</span>
-                                <pre>value     = {{ form.controls.title.value | json }}</pre>
-                                <pre>touched   = {{ form.controls.title.touched | json }}</pre>
-                                <pre>untouched = {{ form.controls.title.untouched | json }}</pre>
-                                <pre>pristine  = {{ form.controls.title.pristine | json }}</pre>
-                                <pre>dirty     = {{ form.controls.title.dirty | json }}</pre>
-                                <pre>valid     = {{ form.controls.title.valid | json }}</pre>
-                                <pre>invalid   = {{ form.controls.title.invalid | json }}</pre>
-                                <pre>errors    = {{ form.controls.title.errors | json }}</pre>
+                                  <span *ngIf="form.controls['title'].errors?.required">請填寫標題內容</span>
+                                <pre>value     = {{ form.get('title').value | json }}</pre>
+                                <pre>touched   = {{ form.get('title').touched | json }}</pre>
+                                <pre>untouched = {{ form.get('title').untouched | json }}</pre>
+                                <pre>pristine  = {{ form.get('title').pristine | json }}</pre>
+                                <pre>dirty     = {{ form.get('title').dirty | json }}</pre>
+                                <pre>valid     = {{ form.get('title').valid | json }}</pre>
+                                <pre>invalid   = {{ form.get('title').invalid | json }}</pre>
+                                <pre>errors    = {{ form.get('title').errors | json }}</pre>
                                 </span>
                             </div>
                         </div>
@@ -43,7 +43,7 @@
                             <div class="col-sm-10">
                                 <input type="text" class="form-control" formControlName="subtitle">
                                 <span class="help-block">
-                                  <pre>value     = {{ form.controls.group1.controls.subtitle.value | json }}</pre>
+                                  <pre>value     = {{ form.get('group1.subtitle').value | json }}</pre>
                                   <pre>touched   = {{ form.get('group1.subtitle').touched | json }}</pre>
                                   <pre>untouched = {{ form.get('group1.subtitle').untouched | json }}</pre>
                                   <pre>pristine  = {{ form.get('group1.subtitle').pristine | json }}</pre>
@@ -57,7 +57,7 @@
                     </fieldset>
 
 
-                    <fieldset formArrayName="addresses" *ngFor="let ctrl of form.get('addresses').controls; let i=index">
+                    <fieldset formArrayName="addresses" *ngFor="let ctrl of form.get('addresses')['controls']; let i=index">
                         <div class="form-group" [class.has-error]="form.get('addresses.'+i).touched && form.get('addresses.'+i).invalid">
                             <label for="input-id-1" class="col-sm-2 control-label">
                               地址 {{i+1}}
