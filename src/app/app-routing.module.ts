@@ -23,8 +23,9 @@ const routes: Routes = [
       { path: 'charts',
         loadChildren: './charts/charts.module#ChartsModule'
       },
-      { path: 'forms/classic', component: ClassicComponent },
-      { path: 'forms/classic2', component: Classic2Component }
+      { path: 'forms',
+        loadChildren: './forms/forms.module#FormsModule'
+      }
   ]},
   fallbackRoute
 ];

@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FormsModule as TemplateFormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -11,10 +11,9 @@ import { CardsComponent } from './cards/cards.component';
 import { LoginComponent } from './login/login.component';
 import { LayoutComponent } from './layout/layout.component';
 import { LoginGuard } from './login.guard';
-import { ClassicComponent } from './forms/classic/classic.component';
-import { Classic2Component } from './forms/classic2/classic2.component';
 import { BlockComponent } from './block/block.component';
 import { PlusoneDirective } from './plusone.directive';
+import { FormsModule } from './forms/forms.module';
 
 @NgModule({
   declarations: [
@@ -25,15 +24,14 @@ import { PlusoneDirective } from './plusone.directive';
     CardsComponent,
     LoginComponent,
     LayoutComponent,
-    ClassicComponent,
-    Classic2Component,
     BlockComponent,
     PlusoneDirective
   ],
   imports: [
     BrowserModule,
-    FormsModule,
+    TemplateFormsModule,
     ReactiveFormsModule,
+    FormsModule,
     AppRoutingModule
   ],
   providers: [LoginGuard],
